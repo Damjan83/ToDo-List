@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dist/css/main.css">
-    <title>ToDo list/title>
+    <title>ToDo list</title>
 </head>
 <body>
+    <div class="todo">
+        <h1 class="todo__title">Works to be done</h1>
+        <div class="todo__input">
+            <input class="input" type="text" maxlength="50" placeholder="Enter the Work" id="input-value">
+            <button class="btn">Add</button>
+        </div>
+        <div class="todo__task">
+           <div class="todo__task-fild">
+                <div class="todo__task-fild-text"></div>
+                <img class="todo__task-fild-img todo__task-fild-img--edit" src="./src/assets/images/edit.svg" alt="edit">
+                <img class="todo__task-fild-img todo__task-fild-img--delete" src="./src/assets/images/delete.svg" alt="delete">              
+           </div>
+        </div>
+        
+    </div>
     <script src="dist/js/app.js"></script>
 </body>
 </html>

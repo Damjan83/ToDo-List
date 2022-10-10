@@ -7,7 +7,12 @@
 
 //Layout
 @import 'layout/_background';
+@import 'layout/_todo';
 
+//Components
+@import 'components/_input';
+@import 'components/_button';
+@import 'components/_todo-fild';
 
 html {
   box-sizing: border-box;
@@ -33,4 +38,7 @@ img {
 
 body {
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
