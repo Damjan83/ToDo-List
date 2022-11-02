@@ -16,9 +16,26 @@ $( document ).ready(function() {
         let $btnDelete = $('<button/>').addClass('delete').html('delete');
         $($taskELe).append($btnEdit);
         $($taskELe).append($btnDelete);
-        
+
         $('.todo__tasks').append($taskELe);
         $($task).val('');
+
+        $($btnEdit).on('click' , function() {
+            if($btnEdit.html().toLowerCase() == 'edit') {
+                $($taskInput).prop('readonly' , false);
+                $($taskInput).focus();
+                $($btnEdit).html('save');
+            }else {
+                $($taskInput).prop('readonly' , true);
+                $($btnEdit).html('edit');
+            }
+        })
+
+        $($btnDelete).on('click' , function() {
+            $($taskInput).remove();
+            $($btnEdit).remove();
+            $($btnDelete).remove();
+        })
     });
     
 });
