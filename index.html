@@ -8,20 +8,29 @@
 </head>
 <body>
     <div class="todo">
-        <h1 class="todo__title">Works to be done</h1>
-        <div class="todo__input">
-            <input class="input" type="text" maxlength="50" placeholder="Enter the Work" id="input-value">
-            <button class="btn">Add</button>
-        </div>
-        <div class="todo__task">
-           <div class="todo__task-fild">
-                <div class="todo__task-fild-text"></div>
-                <img class="todo__task-fild-img todo__task-fild-img--edit" src="./src/assets/images/edit.svg" alt="edit">
-                <img class="todo__task-fild-img todo__task-fild-img--delete" src="./src/assets/images/delete.svg" alt="delete">              
-           </div>
-        </div>
+        <h1 class="todo__title">ToDo list of task</h1>
+        <form id="todo__form">
+            <input type="text" id="todo__input" maxlength="50" placeholder="Enter the task">
+            <input type="submit" id="todo__submit" value="Add task">
+        </form>
         
+        <div class="todo__list">
+            <h1 class="todo__title">Task</h1>
+            <div class="todo__tasks">
+                <!-- <div class="todo__content">
+                    <input type="text" class="todo__content-text" value="new task" readonly>
+                    <button class="edit">
+                    <img src="./src/assets/images/edit.svg" alt="edit">
+                    </button>
+                    <button class="delete">
+                    <img src="./src/assets/images/delete.svg" alt="delete">
+                    </button>
+                </div> -->
+                
+            </div>
+        </div> 
     </div>
+    <script src="dist/js/jquery.js"></script>
     <script src="dist/js/app.js"></script>
 </body>
 </html>

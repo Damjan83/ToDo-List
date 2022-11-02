@@ -12,7 +12,7 @@
 //Components
 @import 'components/_input';
 @import 'components/_button';
-@import 'components/_todo-fild';
+@import 'components/_task';
 
 html {
   box-sizing: border-box;
@@ -41,4 +41,5 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Fira sans' , sans-serif;
 }

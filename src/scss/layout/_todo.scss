@@ -1,18 +1,26 @@
 .todo {
     width: auto;
     height: auto;
-    background-color: gray;
 }
 
 .todo__title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
+    margin: 20px 0 20px;
 }
 
-.todo__input {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#todo__input, #todo__submit {
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+}
+
+#todo__submit {
+    background: linear-gradient(to left, #4776e6, #8e54e9);
+    border: 1px solid black;
+}
+
+#todo__input {
+    width: 300px;
+    color: white;
+    background: #242a3b;
+    outline: none;
 }
