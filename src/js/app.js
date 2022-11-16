@@ -1,4 +1,14 @@
+
+
 $( document ).ready(function() {
+
+      $.get( "https://test-f8640-default-rtdb.europe-west1.firebasedatabase.app/food.json", function( data ) {
+        $(data).each(function(i) {
+            console.log(data)
+        })
+    });
+ 
+
     $('#todo__form').on('submit' , function(e) {
         e.preventDefault();
         let $task = $('#todo__input');
@@ -7,17 +17,27 @@ $( document ).ready(function() {
             return;
         } 
 
-        let $taskELe = $('<div/>').addClass('task');
+        let $taskEle = $('<div/>').addClass('task');
         let $taskInput = $('<input>' , {type: 'text' , class: 'text'}).prop('readonly' , true);
         $($taskInput).val($task.val())
-        $($taskELe).append($taskInput);
+        $($taskEle).append($taskInput);
 
         let $btnEdit = $('<button/>').addClass('edit').html('edit');
         let $btnDelete = $('<button/>').addClass('delete').html('delete');
-        $($taskELe).append($btnEdit);
-        $($taskELe).append($btnDelete);
+        $($taskEle).append($btnEdit);
+        $($taskEle).append($btnDelete);
 
-        $('.todo__tasks').append($taskELe);
+        let $taskCheckCont = $('<div/>').addClass('container');
+        let $taskCheck = $('<input>' , {type: 'checkbox' , id: 'checkbox' });
+        let $taskCheckSpan = $('<span/>').addClass('checkmark');
+        $($taskEle).append($taskCheckCont);
+        $($taskCheckCont).append($taskCheck);
+        $($taskCheckCont).append($taskCheckSpan);
+        $($taskCheck).on('click' , function() {
+            $($taskEle).css({opacity: 0.5})
+        })
+
+        $('.todo__tasks').append($taskEle);
         $($task).val('');
 
         $($btnEdit).on('click' , function() {
@@ -35,6 +55,7 @@ $( document ).ready(function() {
             $($taskInput).remove();
             $($btnEdit).remove();
             $($btnDelete).remove();
+            $($taskCheck).remove();
         })
     });
     
